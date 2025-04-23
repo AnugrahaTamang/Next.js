@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const MoviePage = () => {
+const Dashboard = () => {
   const movies = [
     { id: "1", title: "Inception" },
     { id: "2", title: "Interstellar" },
@@ -9,10 +9,16 @@ const MoviePage = () => {
   ];
   return (
     <div>
+      <h1>Movies List</h1>
       <ul>
-        {movies.map((movie) => (
-          <li key={movie.id}>
-            <Link href={`Movies/${movie.id}`}>{movie.title}</Link>
+        {movies.map((d) => (
+          <li key={d.id}>
+            <Link
+              href={`movies/${d.id}`}
+              className="text-blue-400 hover:text-blue-600"
+            >
+              {d.title}
+            </Link>
           </li>
         ))}
       </ul>
@@ -20,4 +26,4 @@ const MoviePage = () => {
   );
 };
 
-export default MoviePage;
+export default Dashboard;

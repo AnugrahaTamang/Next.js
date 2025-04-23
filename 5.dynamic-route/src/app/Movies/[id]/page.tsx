@@ -1,6 +1,6 @@
 import React from "react";
 
-const MovieIdOne = ({ params }: { id: string }) => {
+const MoviePage = ({ params }: { params: { id: string } }) => {
   const movies = [
     {
       id: "1",
@@ -35,21 +35,16 @@ const MovieIdOne = ({ params }: { id: string }) => {
       ],
     },
   ];
-
   const movie = movies.find((movie) => movie.id === params.id);
+
   return (
     <div>
-      <h1>Movie Title: {movie?.title}</h1>
-      <p>Movie description: {movie?.description}</p>
-      <p>Movie ratings: {movie?.rating}</p>
-      <p>Movie Comments: {movie?.comments}</p>
-      <ul>
-        {movie?.commentsList.map((cm) => (
-          <li key={Math.random()}>{cm}</li>
-        ))}
-      </ul>
+      <h1>Movie title: {movie?.title}</h1>
+      <h1>Movie description: {movie?.description}</h1>
+      <h1>Ratings: {movie?.rating}</h1>
+      <h1>Comments: {movie?.comments}</h1>
     </div>
   );
 };
 
-export default MovieIdOne;
+export default MoviePage;
