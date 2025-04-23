@@ -1,15 +1,17 @@
 import React from "react";
 
-const AllOne = async ({ params }: { params: { all: string[] } }) => {
+const CatchAll = async ({ params }: { params: { all: string[] } }) => {
   const { all } = await params;
+  console.log(all);
   return (
     <div>
-      <h1>{all}</h1>
-      {all.map((data) => (
-        <li key={Math.random()}>{data}</li>
-      ))}
+      <ul>
+        {all.map((d) => (
+          <li key={Math.random()}>{d}</li>
+        ))}
+      </ul>
     </div>
   );
 };
 
-export default AllOne;
+export default CatchAll;
